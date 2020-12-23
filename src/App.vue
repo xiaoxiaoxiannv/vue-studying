@@ -1,34 +1,28 @@
 <template>
-  <div id="app">
-    {{n}}
-    <button @click="add">+1</button>
+  <div class="app">
+    App.vue 我现在有{{total}}
+    <hr/>
+    <Child :money.sync="total"/>
   </div>
 </template>
 
 <script>
-
+import Child from "./Child.vue";
 export default {
-  name: 'App',
   data(){
     return{
-      n:0
+      total:10000
     }
   },
-  methods:{
-    add(){
-      this.n += 1
-    }
-  }
+  components:{
+    Child
+  },
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app {
+  border:3px solid red;
+  padding: 10px;
 }
 </style>
