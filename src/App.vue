@@ -1,28 +1,29 @@
 <template>
   <div class="app">
-    App.vue 我现在有{{total}}
-    <hr/>
-    <Child :money.sync="total"/>
+   <button v-on2:click="hi">点我</button>
   </div>
 </template>
 
 <script>
-import Child from "./Child.vue";
 export default {
-  data(){
-    return{
-      total:10000
+  methods:{
+    hi(){
+      console.log('hi')
     }
   },
-  components:{
-    Child
-  },
+  directives:{
+    'on2':{
+      inserted(el,info){
+        el.addEventListener(info.arg,info.value)
+      },
+      unbind(el,info){
+        el.removeEventListener(info.arg,info.value)
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-.app {
-  border:3px solid red;
-  padding: 10px;
-}
+
 </style>
