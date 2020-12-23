@@ -4,13 +4,14 @@
     </div>
 </template>
 <script>
-    import log from '../mixins/log.js'
+    import MyVue from "../MyVue.js";
+
     export default {
-        data(){
-            return{
-                name:'Child1'
+        extends: MyVue,
+        data() {
+            return {
+                name: 'Child1'
             }
         },
-        mixins:[log]
     }
 </script>

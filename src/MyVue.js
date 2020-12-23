@@ -1,4 +1,5 @@
-const log = {
+import Vue from 'vue'
+const MyVue = Vue.extend({
     data() {
         return {
             name: undefined,
@@ -16,5 +17,5 @@ const log = {
         const now = new Date();
         console.log(`${this.name}死亡了，共生存了${now - this.time}ms`)
     }
-};
-export default log
+});
+export default MyVue
