@@ -1,17 +1,12 @@
 <template>
     <div>
         Child2
+        <ChangeThemeButton/>
     </div>
 </template>
 <script>
-    import MyVue from "../MyVue";
-
+    import ChangeThemeButton from './ChangeThemeButton.vue'
     export default {
-        extends: MyVue,
-        data() {
-            return {
-                name: 'Child2'
-            }
-        },
+        components:{ChangeThemeButton}
     }
 </script>
