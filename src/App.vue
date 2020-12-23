@@ -1,5 +1,5 @@
 <template>
-  <div v-x class="app">
+  <div class="app">
     App.vue 我现在有{{total}}
     <hr/>
     <Child :money.sync="total"/>
