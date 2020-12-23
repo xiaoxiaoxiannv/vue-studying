@@ -8,13 +8,18 @@ new Vue({
         add() {
             this.n += 1
         },
+        y(e){
+            console.log(e.target.value)
+        }
     },
     template: `
         <div>
             {{n}}
             <button @click="add">+1</button>
-            <hr>
+            <hr/>
             <a @click.prevent href="https://www.baidu.com">baidu</a>
+            <hr/>
+            <input @input="y"/>
         </div>
     `,
 }).$mount('#app')
