@@ -4,20 +4,23 @@ Vue.config.productionTip = false
 import Demo from './Demo.vue'
 
 new Vue({
-   components:{Demo},
-    data:{
-      visible:true
+    components: {Demo},
+    data: {
+        visible: true,
+        n: 0
     },
-    template:`
+    template: `
         <div>
-            <button @click="toggle">toggle</button>
-            <hr>
-            <Demo v-if="visible === true"/>
+            {{n}}
+            <Demo :message="n" :fn="add"></Demo>
         </div>
     `,
-    methods:{
-       toggle(){
-           this.visible = !this.visible
-       }
+    methods: {
+        add(){
+            this.n += 1
+        },
+        toggle() {
+            this.visible = !this.visible
+        }
     }
 }).$mount('#app')
