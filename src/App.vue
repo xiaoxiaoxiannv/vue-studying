@@ -2,7 +2,7 @@
     <div id="app">
         周末干什么:{{x}}
         <hr/>
-        <select v-model="x">
+        <select multiple v-model="x">
             <option value="">请选择</option>
             <option v-for="item in array" :value="item.value" :key="item.value">{{item.text}}</option>
         </select>
@@ -19,7 +19,7 @@
                     {text:'游泳',value:2},
                     {text:'徒步',value:3}
                 ],
-                x:''
+                x:[]
             }
         },
         components:{}
