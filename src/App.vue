@@ -1,18 +1,11 @@
 <template>
     <div id="app">
         周末干什么:{{x}}
-        <label>
-            <input name="want" type="radio" v-model="x" :value="1"/>
-            <span>看电影</span>
-        </label>
-        <label>
-            <input name="want" type="radio" v-model="x" :value="2"/>
-            <span>游泳</span>
-        </label>
-        <label>
-            <input name="want" type="radio" v-model="x" :value="3"/>
-            <span>徒步</span>
-        </label>
+        <hr/>
+        <select v-model="x">
+            <option value="">请选择</option>
+            <option v-for="item in array" :value="item.value" :key="item.value">{{item.text}}</option>
+        </select>
     </div>
 </template>
 
@@ -21,6 +14,11 @@
         name:'App',
         data(){
             return{
+                array:[
+                    {text:'看电影',value:1},
+                    {text:'游泳',value:2},
+                    {text:'徒步',value:3}
+                ],
                 x:''
             }
         },
