@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <input v-model="message" placeholder="edit me"/>
+        <textarea v-model="message" placeholder="edit me"/>
         <p>Message is:{{message}}</p>
         <hr/>
         <button @click="message = 'frank'">set message to frank</button>
