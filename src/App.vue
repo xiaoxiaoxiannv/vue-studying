@@ -1,16 +1,16 @@
 <template>
     <div id="app">
-        爱好:{{x}}
+        周末干什么:{{x}}
         <label>
-            <input type="checkbox" v-model="x" :value="1"/>
+            <input name="want" type="radio" v-model="x" :value="1"/>
             <span>看电影</span>
         </label>
         <label>
-            <input type="checkbox" v-model="x" :value="2"/>
+            <input name="want" type="radio" v-model="x" :value="2"/>
             <span>游泳</span>
         </label>
         <label>
-            <input type="checkbox" v-model="x" :value="3"/>
+            <input name="want" type="radio" v-model="x" :value="3"/>
             <span>徒步</span>
         </label>
     </div>
@@ -21,7 +21,7 @@
         name:'App',
         data(){
             return{
-                x:[]
+                x:''
             }
         },
         components:{}
