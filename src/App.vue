@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         登陆
-        <form>
+        <form @submit.prevent="onSubmit">
             <label>
                 <span>用户名</span>
                 <input type="text" v-model="user.username"/>
@@ -25,6 +25,11 @@
                    password: ''
                },
                 x:[]
+            }
+        },
+        methods:{
+            onSubmit(){
+                console.log(this.user)
             }
         },
         components:{}
