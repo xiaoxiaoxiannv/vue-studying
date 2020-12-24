@@ -6,7 +6,7 @@
         <form @submit.prevent="onSubmit">
             <label>
                 <span>用户名</span>
-                <input type="text" v-model.lazy="user.username"/>
+                <input type="text" v-model.number="user.username"/>
             </label>
             <label>
                 <span>密码</span>
@@ -23,7 +23,7 @@
         data(){
             return{
                user:{
-                   username: '',
+                   username: 0,
                    password: ''
                },
                 x:[]
