@@ -1,11 +1,17 @@
 <template>
     <div id="app">
-        周末干什么:{{x}}
-        <hr/>
-        <select multiple v-model="x">
-            <option value="">请选择</option>
-            <option v-for="item in array" :value="item.value" :key="item.value">{{item.text}}</option>
-        </select>
+        登陆
+        <form>
+            <label>
+                <span>用户名</span>
+                <input type="text" v-model="user.username"/>
+            </label>
+            <label>
+                <span>密码</span>
+                <input type="password" v-model="user.password"/>
+            </label>
+            <button>提交</button>
+        </form>
     </div>
 </template>
 
@@ -14,11 +20,10 @@
         name:'App',
         data(){
             return{
-                array:[
-                    {text:'看电影',value:1},
-                    {text:'游泳',value:2},
-                    {text:'徒步',value:3}
-                ],
+               user:{
+                   username: '',
+                   password: ''
+               },
                 x:[]
             }
         },
