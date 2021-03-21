@@ -1,25 +1,16 @@
 <template>
     <div id="app">
-        {{user}}
-        <hr>
-        登陆
-        <form @submit.prevent="onSubmit">
-            <label>
-                <span>用户名</span>
-                <input type="text" v-model.trim="user.username"/>
-            </label>
-            <label>
-                <span>密码</span>
-                <input type="password" v-model="user.password"/>
-            </label>
-            <button>提交</button>
-        </form>
+      <Parent></Parent>
     </div>
 </template>
 
 <script>
+import Parent from "@/components/Parent";
     export default {
         name:'App',
+      comments:{
+        Parent
+      },
         data(){
             return{
                user:{
@@ -34,7 +25,7 @@
                 console.log(this.user)
             }
         },
-        components:{}
+        components:{Parent}
     }
 </script>
 
